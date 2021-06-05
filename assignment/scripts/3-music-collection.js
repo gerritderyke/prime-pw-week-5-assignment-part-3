@@ -1,6 +1,6 @@
 console.log('***** Music Collection *****')
 
- const collection = [];
+ let collection = [];
 
  //-----------------------------------
 
@@ -34,5 +34,18 @@ console.log(addtoCollection('Metallica', 'Metallica', '1991'));
 console.log(addtoCollection('Make Believe', 'Weezer', '2005'));
 console.log(addtoCollection('The Long Road Home', 'John Fogerty/CCR', '2005'));
 console.log(addtoCollection('Finding Beauty In Negative Spaces', 'Seether', '2007'));
-console.log(addtoCollection('Blank Face', 'ScHoolboy Q', '2016'));
+console.log(addtoCollection('Karma and Effect', 'Seether', '2005'));
 console.log(collection);
+
+function showCollection( array ){
+  console.log(array.length);
+  for ( let i = 0; i < array.length; i++ )
+  console.log(array[i].title, 'by', array[i].artist,'published in', array[i].yearPublished);
+
+  return true //***console showed 'undefined' without a return so I added a boolean.
+}
+console.log(showCollection(collection));
+
+
+//inside the for loop I had it console.log the pieces of
+//the album to put together the sentence: array[i].title, array[i].artist, array[i].yearPublished
