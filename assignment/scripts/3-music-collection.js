@@ -39,13 +39,41 @@ console.log(collection);
 
 function showCollection( array ){
   console.log(array.length);
-  for ( let i = 0; i < array.length; i++ )
-  console.log(array[i].title, 'by', array[i].artist,'published in', array[i].yearPublished);
-
-  return true //***console showed 'undefined' without a return so I added a boolean.
+  for ( let i = 0; i < array.length; i++ ){
+  console.log(`${array[i].title} by ${array[i].artist}, published in ${array[i].yearPublished}`);
+}//end for
+  return true//***console showed 'undefined' without a return so I added a boolean.
 }
 console.log(showCollection(collection));
 
+// function findByArtist(artist){
+//   let artists = [];
+//   for ( let i = 0; i < collection.length; i++){
+//     if (artist === collection)
+//     artists.push(artist)
+//   }//end for loop
+//
+// }//end function
 
-//inside the for loop I had it console.log the pieces of
-//the album to put together the sentence: array[i].title, array[i].artist, array[i].yearPublished
+// function findByArtist(artist){
+//   let band = [];
+//   for ( let i = 0; i < collection.length; i++){
+//     if (artist === collection){
+//     band.push(artist);
+//     return band
+//   }//end if
+//   }//end for
+// }//end function
+// console.log(findByArtist('Seether'));
+
+function findByArtist(artist){
+  let band = [];
+  for ( let i = 0; i < collection.length; i++){
+    if (artist === collection[i].artist){
+    band.push(collection[i]);
+    }//end if
+  }//end for
+  return band
+}//end function
+console.log(findByArtist('Seether'));
+console.log(findByArtist('ScHoolboy Q'));
